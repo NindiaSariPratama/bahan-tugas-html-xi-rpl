@@ -4,44 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buat Account Baru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Gradasi pastel */
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #0d47a1; /* Warna biru gelap */
+            margin-top: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            text-align: center;
+            color: #1976d2; /* Warna biru sedang */
+            margin-top: 10px;
+            font-size: 2em;
+        }
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff; /* Latar belakang putih */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: calc(100% - 20px); /* Lebar input */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .gender-labels {
+            display: flex;
+            justify-content: space-around; /* Menyebarkan tombol pilihan */
+            margin-bottom: 15px;
+        }
+        .gender-label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid #1976d2; /* Warna border tombol */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s; /* Transisi */
+        }
+        .gender-label:hover {
+            background: #bbdefb; /* Warna saat di-hover */
+            transform: scale(1.05); /* Efek zoom saat di-hover */
+        }
+        input[type="radio"] {
+            display: none; /* Menyembunyikan input radio */
+        }
+        input[type="radio"]:checked + .gender-label {
+            background: #1976d2; /* Warna latar belakang saat terpilih */
+            color: #ffffff; /* Teks putih */
+        }
+        input[type="submit"] {
+            background: #0d47a1; /* Warna tombol */
+            color: #ffffff; /* Teks putih */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s, transform 0.3s; /* Transisi */
+        }
+        input[type="submit"]:hover {
+            background: #1976d2; /* Warna saat di-hover */
+            transform: scale(1.05); /* Efek zoom saat di-hover */
+        }
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        .checkbox-group input {
+            width: auto; /* Lebar checkbox */
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Buat Account Baru</h1>
     <h2>Sign Up Form</h2>
     
     <form action="welcome.html" method="get">
-        <label for="first-name">First name:</label><br>
-        <input type="text" id="first-name" name="first-name"><br><br>
+        <label for="first-name">First name:</label>
+        <input type="text" id="first-name" name="first-name" required>
 
-        <label for="last-name">Last name:</label><br>
-        <input type="text" id="last-name" name="last-name"><br><br>
+        <label for="last-name">Last name:</label>
+        <input type="text" id="last-name" name="last-name" required>
 
-        <label>Gender:</label><br>
-        <input type="radio" id="male" name="gender" value="Male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="Female">
-        <label for="female">Female</label><br><br>
+        <label>Gender:</label>
+        <div class="gender-labels">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label class="gender-label" for="male">Male</label>
+            
+            <input type="radio" id="female" name="gender" value="Female">
+            <label class="gender-label" for="female">Female</label>
+        </div>
 
-        <label for="nationality">Nationality:</label><br>
-        <select id="nationality" name="nationality">
+        <label for="nationality">Nationality:</label>
+        <select id="nationality" name="nationality" required>
             <option value="Indonesian">Indonesian</option>
             <option value="Singaporean">Singaporean</option>
             <option value="Malaysian">Malaysian</option>
             <option value="Other">Other</option>
-        </select><br><br>
+        </select>
 
-        <label>Language Spoken:</label><br>
-        <input type="checkbox" id="bahasa" name="language" value="Bahasa Indonesia">
-        <label for="bahasa">Bahasa Indonesia</label><br>
-        <input type="checkbox" id="english" name="language" value="English">
-        <label for="english">English</label><br>
-        <input type="checkbox" id="other-language" name="language" value="Other">
-        <label for="other-language">Other</label><br><br>
+        <label>Language Spoken:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="bahasa" name="language" value="Bahasa Indonesia">
+            <label for="bahasa">Bahasa Indonesia</label><br>
+            <input type="checkbox" id="english" name="language" value="English">
+            <label for="english">English</label><br>
+            <input type="checkbox" id="other-language" name="language" value="Other">
+            <label for="other-language">Other</label>
+        </div>
 
-        <label for="bio">Bio:</label><br>
-        <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" required></textarea>
 
         <input type="submit" value="Sign Up">
     </form>
+
 </body>
 </html>
