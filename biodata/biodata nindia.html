@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fce4ec; 
+            color: #333;
+        }
+        h1 {
+            color: #d81b60;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            border-radius: 50%;
+            border: 3px solid #d81b60;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .biodata {
+            background: #f8bbd0;
+            border-left: 5px solid #d81b60;
+            border-radius: 5px;
+            padding: 15px;
+            transition: background 0.3s;
+        }
+        .biodata:hover {
+            background: #f48fb1;
+        }
+        audio, video {
+            border: 2px solid #f48fb1;
+            border-radius: 5px;
+        }
+        audio:hover, video:hover {
+            border-color: #d81b60;
+        }
+        strong {
+            color: #d81b60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <h1 class="text-center mb-5">Biodata Diri</h1>
+    <div class="row g-4">
+        <!-- Left Section -->
+        <div class="col-md-8">
+            <div class="card p-4">
+                <div class="text-center mb-4">
+                    <img src="c:\Users\hp\Downloads\WhatsApp Image 2024-10-09 at 10.10.04.jpeg" alt="Foto Diri" class="img-fluid" style="max-width: 150px;">
+                </div>
+                <div class="biodata">
+                    <strong>Nama:</strong> Nindia Sari Pratama
+                </div>
+                <div class="biodata">
+                    <strong>Kelas:</strong> 11 RPL 1
+                </div>
+                <div class="biodata">
+                    <strong>Tempat, Tanggal Lahir:</strong> Karawang, 18 Januari 2008
+                </div>
+                <div class="biodata">
+                    <strong>Alamat:</strong> Pasir Malang RT02/RW18
+                </div>
+                <div class="biodata">
+                    <strong>Hobi:</strong> Membaca
+                </div>
+            </div>
+        </div>
+        <!-- Right Section -->
+        <div class="col-md-4">
+            <div class="card p-4 text-center">
+                <audio controls class="w-100 mb-4">
+                    <source src="c:\Users\hp\Downloads\1789451005.mp3" type="audio/mpeg">
+                </audio>
+                <video controls class="w-100" style="max-width: 187px; height: auto;">
+                    <source src="c:\Users\hp\Downloads\WhatsApp Video 2024-10-09 at 11.09.50.mp4" type="video/mp4">
+                </video>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
